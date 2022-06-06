@@ -6,6 +6,12 @@ This is a technique that is used to convert a entity to a defined dto in the Nes
 - class-validator
 
 
+### How to install
+```
+npm install --save class-transformer
+npm install --save class-validator
+```
+
 ### Transformer interceptor
 This is the interceptor that is used to transform the entities. The function painToClass is being used to transform the classes. 
 
@@ -27,7 +33,7 @@ export class TransformInterceptor<T> implements NestInterceptor<Partial<T>, T> {
 ```
 
 ### Entity
-This is the database entity where all the values are defined that can be used by the DTO and are saved in the database. Since SQL is used the TypeORM module is used for defining what the columns look like.
+This is the database entity where all the values are defined that can be used by the DTO and are saved in the database. Since SQL is used, we use the TypeORM module for defining what the columns look like.
 
 A great trick is to use a getter as a new attribute to use the variables in the entity to create new data. See the last attribute. This getter can be used in the dto's.
 
@@ -96,7 +102,7 @@ export class ResponseDetailUserDto {
 ### Controller
 To send the correct data that is transformed to the dto, we use the interceptor on the endpoint as a decorator. Here we give the DTO type to the interceptor. 
 
-The returned user is of type User. 
+In the example the returned user is of type User. 
 
 ```
   @Get('/profile')
