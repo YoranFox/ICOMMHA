@@ -1,7 +1,13 @@
 # NestJS auto DTO conversion with interceptor
-In this tutorial we will be discussing the possibilities and technical aspects of a auto DTO transformer when using NestJS. Once you start using NestJS you will find that using DTO's for your enteties and data objects is a important step. We will be taking this even one step further by allowing you to define your DTO's and transform them without having to program a extra transformation step for each endpoint. 
+In this tutorial we will be discussing the possibilities and technical aspects of a auto DTO transformer when using NestJS. Once you start using NestJS you will find that using DTO's for your enteties and data objects is a important step. We will be taking this even one step further by allowing you to define your DTO's and transform them without having to program a extra transformation step for each endpoint.
 
-## Setup 
+## Content
+* Prerequisite
+* Why use a DTO
+* Automatic transformation
+* Conclusion with extra examples
+
+## Prerequisite
 
 ### Packages used
 - class-transformer https://github.com/typestack/class-transformer
@@ -83,7 +89,7 @@ We removed the roles and password fields and kept the fields we want to send bac
 The fields are mapped to the right fields of the DTO and is returned. The only downside is that you need to do this for every endpoint that you make. This alone is already a usefull tool but we want to make sure this transformation is done automatically.
 
 
-## Transformer interceptor
+## Automatic transformation
 To transform a entity to a DTO described above we need to utilize the `plainToClass` function provided by the class-transformer package. Here we can send the DTO to transform to and the data to transform. But to be able to do this for every request we need to create a Interceptor in NestJS and apply this logic.
 
 ```
@@ -115,7 +121,7 @@ So now we can use this interceptor and apply it to the endpoint and give in the 
 ```
 
 
-## Extra examples
+## Conclusion with extra examples
 
 The above solution gives us the tools to automate the work flow of tranforming and returning the right data objects for a endpoint. There are a few handy features that you can use when applying this.
 
