@@ -9,7 +9,7 @@ In this tutorial we will be discussing the possibilities and technical aspects o
 
 ## Prerequisite
 
-## Knowledge
+### Knowledge
 It is excpected that you have average knowledge of the NestJS Principles and know how to use and apply DTO's effectifely.
 
 ### Packages used
